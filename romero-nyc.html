@@ -1,576 +1,1214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="Romero NYC — AI-powered outbound email campaigns. You only pay when we book a qualified meeting. No retainers, no guesswork.">
-<title>Romero NYC — Pay Per Meeting, Period.</title>
-<link rel="icon" href="favicon.png" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description"
+    content="Romero NYC — AI-powered outbound email campaigns. You only pay when we book a qualified meeting. No retainers, no guesswork.">
+  <title>Romero NYC — Pay Per Meeting, Period.</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-:root {
-  --forest:   #1f3329;
-  --moss:     #2e5039;
-  --sage:     #4a7c59;
-  --fern:     #6aaa7a;
-  --mist:     #d4e6d0;
-  --linen:    #f0ede6;
-  --paper:    #faf8f4;
-  --bark:     #3d2e1e;
-  --stone:    #7a7468;
-  --rule:     #ddd8cc;
-  --white:    #ffffff;
-  --font-display: 'Lora', Georgia, serif;
-  --font-body:    'Instrument Sans', sans-serif;
-  --radius: 4px;
-}
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
-body {
-  background: var(--paper);
-  color: var(--forest);
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.65;
-  overflow-x: hidden;
-}
+    :root {
+      --forest: #1f3329;
+      --moss: #2e5039;
+      --sage: #4a7c59;
+      --fern: #6aaa7a;
+      --mist: #d4e6d0;
+      --linen: #f0ede6;
+      --paper: #faf8f4;
+      --bark: #3d2e1e;
+      --stone: #7a7468;
+      --rule: #ddd8cc;
+      --white: #ffffff;
+      --font-display: 'Lora', Georgia, serif;
+      --font-body: 'Instrument Sans', sans-serif;
+      --radius: 4px;
+    }
 
-body::after {
-  content: '';
-  position: fixed; inset: 0;
-  pointer-events: none;
-  z-index: 9000;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+    body {
+      background: var(--paper);
+      color: var(--forest);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
 
-/* MOBILE STICKY CTA */
-.mobile-cta-bar {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 500;
-  background: var(--forest);
-  padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
-}
-.mobile-cta-bar a {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--fern);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 16px;
-  border-radius: var(--radius);
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-}
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9000;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 200;
-  background: rgba(250,248,244,0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule);
-  padding: 0 40px;
-  height: 68px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 24px;
-}
+    /* MOBILE STICKY CTA */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      background: var(--forest);
+      padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
+    }
 
-/* Logo placeholder */
-.nav-logo-wrap {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none; flex-shrink: 0;
-}
-.nav-logo-img {
-  width: 44px; height: 44px;
-  border: 1.5px dashed var(--rule);
-  border-radius: var(--radius);
-  background: var(--linen);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.58rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--stone);
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.nav-logo-img img { width: 100%; height: 100%; object-fit: cover; }
-.nav-logo-text {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--forest);
-  line-height: 1;
-}
-.nav-logo-text sup {
-  font-family: var(--font-body);
-  font-size: 0.52rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sage);
-  vertical-align: super;
-  margin-left: 3px;
-}
+    .mobile-cta-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--fern);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 16px;
+      border-radius: var(--radius);
+      width: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-/* Nav links */
-.nav-links {
-  display: flex; align-items: center; gap: 6px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--forest);
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: var(--radius);
-  transition: background 0.18s, color 0.18s;
-  white-space: nowrap;
-  letter-spacing: 0.01em;
-}
-.nav-links a:hover { background: var(--mist); color: var(--moss); }
-.nav-links a.nav-cta {
-  background: var(--forest);
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  padding: 10px 20px;
-}
-.nav-links a.nav-cta:hover { background: var(--moss); color: var(--white); }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: rgba(250, 248, 244, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 40px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-/* Hamburger */
-.nav-hamburger {
-  display: none;
-  flex-direction: column; justify-content: center; align-items: center;
-  gap: 5px;
-  width: 40px; height: 40px;
-  background: none; border: none; cursor: pointer;
-  padding: 4px;
-  border-radius: var(--radius);
-  -webkit-tap-highlight-color: transparent;
-  flex-shrink: 0;
-}
-.nav-hamburger span {
-  display: block;
-  width: 22px; height: 2px;
-  background: var(--forest);
-  border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.2s ease;
-  transform-origin: center;
-}
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    /* Logo placeholder */
+    .nav-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
 
-/* Mobile drawer */
-.nav-drawer {
-  display: none;
-  position: fixed;
-  top: 60px; left: 0; right: 0;
-  background: rgba(250,248,244,0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--rule);
-  z-index: 199;
-  padding: 16px 20px 24px;
-  flex-direction: column; gap: 4px;
-  transform: translateY(-8px);
-  opacity: 0;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  pointer-events: none;
-}
-.nav-drawer.open {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: all;
-}
-.nav-drawer a {
-  display: block;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--forest);
-  text-decoration: none;
-  padding: 14px 16px;
-  border-radius: var(--radius);
-  transition: background 0.18s;
-  letter-spacing: 0.01em;
-}
-.nav-drawer a:hover, .nav-drawer a:active { background: var(--mist); }
-.nav-drawer a.drawer-cta {
-  margin-top: 8px;
-  background: var(--forest);
-  color: var(--white);
-  text-align: center;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 15px 16px;
-}
-.nav-drawer a.drawer-cta:hover { background: var(--moss); }
+    .nav-logo-img {
+      width: 44px;
+      height: 44px;
+      border: 1.5px dashed var(--rule);
+      border-radius: var(--radius);
+      background: var(--linen);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
 
-/* HERO */
-.hero {
-  padding-top: 68px;
-  background: var(--forest);
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-.hero-bg-pattern {
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(106,170,122,0.12) 0%, transparent 70%),
-    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.018) 40px, rgba(255,255,255,0.018) 41px);
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 72px 40px 80px;
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 64px;
-  align-items: center;
-  position: relative; z-index: 1;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(106,170,122,0.18);
-  border: 1px solid rgba(106,170,122,0.35);
-  color: var(--fern);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 7px 14px;
-  border-radius: 100px;
-  margin-bottom: 28px;
-}
-.hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 2s ease infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .nav-logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  color: var(--white);
-}
-.hero h1 em { font-style: italic; color: var(--fern); }
-.hero-sub {
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.65);
-  max-width: 520px;
-  margin-bottom: 40px;
-  line-height: 1.78;
-}
-.hero-actions {
-  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-  margin-bottom: 48px;
-}
-.btn-hero {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--fern);
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 16px 32px;
-  border-radius: var(--radius);
-  transition: background 0.2s, transform 0.15s;
-  white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-}
-.btn-hero:hover { background: #7abe8a; transform: translateY(-1px); }
-.btn-ghost {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  display: flex; align-items: center; gap: 6px;
-  transition: color 0.2s;
-}
-.btn-ghost:hover { color: rgba(255,255,255,0.9); }
-.trust-row {
-  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-}
-.trust-item {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.42);
-  letter-spacing: 0.03em;
-}
-.trust-item .chk {
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  background: rgba(106,170,122,0.25);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.6rem; color: var(--fern); flex-shrink: 0;
-}
-.hero-stats {
-  display: flex; flex-direction: column; gap: 3px;
-}
-.stat-card {
-  background: rgba(255,255,255,0.055);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 28px 32px;
-  border-radius: var(--radius);
-  animation: fadeUp 0.5s ease both;
-}
-.stat-card:nth-child(1){animation-delay:0.1s}
-.stat-card:nth-child(2){animation-delay:0.2s;background:rgba(106,170,122,0.14);border-color:rgba(106,170,122,0.28)}
-.stat-card:nth-child(3){animation-delay:0.3s}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 2.4rem; font-weight: 700;
-  color: var(--fern); line-height: 1; margin-bottom: 6px;
-}
-.stat-card:nth-child(2) .stat-num { color: #9ddba8; }
-.stat-desc { font-size: 0.79rem; color: rgba(255,255,255,0.48); letter-spacing: 0.03em; }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--forest);
+      line-height: 1;
+    }
 
-/* TICKER */
-.ticker-wrap { background: var(--moss); padding: 12px 0; overflow: hidden; }
-.ticker-track {
-  display: flex;
-  animation: ticker 24s linear infinite;
-  white-space: nowrap;
-}
-.ticker-track span {
-  font-size: 0.68rem; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(212,230,208,0.45); padding: 0 36px; flex-shrink: 0;
-}
-.ticker-track span.dot { color: var(--fern); padding: 0 12px; }
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .nav-logo-text sup {
+      font-family: var(--font-body);
+      font-size: 0.52rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      vertical-align: super;
+      margin-left: 3px;
+    }
 
-/* SECTIONS */
-.section { max-width: 1160px; margin: 0 auto; padding: 96px 40px; }
-.section-label {
-  font-size: 0.7rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--sage); margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.section-label::before { content: ''; width: 24px; height: 1.5px; background: var(--sage); }
-h2.display {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3.8vw, 3.2rem);
-  font-weight: 700; line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--forest); margin-bottom: 16px;
-}
-h2.display em { font-style: italic; color: var(--sage); }
-.section-intro {
-  color: var(--stone); font-size: 1rem;
-  max-width: 560px; line-height: 1.78; margin-bottom: 56px;
-}
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
 
-/* STEPS */
-.steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
-.step {
-  background: var(--linen); padding: 44px 36px;
-  position: relative;
-}
-.step::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; background: var(--mist);
-}
-.step:first-child::before { background: var(--fern); }
-.step-num {
-  font-family: var(--font-display);
-  font-size: 3rem; font-weight: 700;
-  color: var(--mist); line-height: 1; margin-bottom: 20px;
-}
-.step h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem; font-weight: 600;
-  color: var(--forest); margin-bottom: 12px; line-height: 1.3;
-}
-.step p { font-size: 0.92rem; color: var(--stone); line-height: 1.72; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--forest);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      transition: background 0.18s, color 0.18s;
+      white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
 
-/* OFFER */
-.offer-band { background: var(--forest); color: var(--white); }
-.offer-inner {
-  max-width: 1160px; margin: 0 auto;
-  padding: 96px 40px;
-  display: grid; grid-template-columns: 1fr 400px;
-  gap: 72px; align-items: start;
-}
-.offer-inner .section-label { color: var(--fern); }
-.offer-inner .section-label::before { background: var(--fern); }
-.offer-inner h2.display { color: var(--white); }
-.offer-inner .section-intro { color: rgba(255,255,255,0.56); margin-bottom: 36px; }
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--fern); color: var(--white);
-  text-decoration: none; font-weight: 600; font-size: 0.92rem;
-  padding: 16px 30px; border-radius: var(--radius);
-  transition: background 0.2s;
-  -webkit-tap-highlight-color: transparent;
-}
-.btn-primary:hover { background: #7abe8a; }
-.qualifier-note {
-  margin-top: 14px; font-size: 0.77rem;
-  color: rgba(255,255,255,0.33);
-  display: flex; align-items: center; gap: 6px;
-}
-.qualifier-note::before { content: '🔒'; font-size: 0.7rem; }
+    .nav-links a:hover {
+      background: var(--mist);
+      color: var(--moss);
+    }
 
-.pricing-card { background: var(--paper); border-radius: var(--radius); overflow: hidden; color: var(--forest); }
-.pricing-header { background: var(--moss); padding: 28px 32px; }
-.pricing-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fern); margin-bottom: 8px; }
-.pricing-amount { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: var(--white); line-height: 1; }
-.pricing-amount small { font-family: var(--font-body); font-size: 0.82rem; font-weight: 400; color: rgba(255,255,255,0.52); display: block; margin-top: 6px; }
-.pricing-body { padding: 28px 32px; }
-.feature-list { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-bottom: 28px; }
-.feature-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--bark); line-height: 1.5; }
-.feature-list li::before { content: '✓'; color: var(--sage); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-.pricing-divider { border: none; border-top: 1px solid var(--rule); margin: 20px 0; }
-.no-contract { font-size: 0.78rem; color: var(--stone); text-align: center; letter-spacing: 0.04em; }
+    .nav-links a.nav-cta {
+      background: var(--forest);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+    }
 
-/* TESTIMONIALS */
-.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
-.t-card { background: var(--linen); padding: 36px 32px; display: flex; flex-direction: column; }
-.t-stars { color: var(--sage); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 16px; }
-.t-quote { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--forest); line-height: 1.4; margin-bottom: 14px; flex: 1; }
-.t-body { font-size: 0.88rem; color: var(--stone); line-height: 1.72; margin-bottom: 24px; }
-.t-author { font-size: 0.78rem; font-weight: 600; color: var(--forest); letter-spacing: 0.04em; }
-.t-role { font-size: 0.75rem; color: var(--stone); }
+    .nav-links a.nav-cta:hover {
+      background: var(--moss);
+      color: var(--white);
+    }
 
-/* OBJECTION STRIP */
-.objection-band { background: var(--mist); }
-.objection-inner {
-  max-width: 1160px; margin: 0 auto;
-  padding: 72px 40px;
-  display: grid; grid-template-columns: repeat(3,1fr); gap: 3px;
-}
-.obj-item { background: var(--white); padding: 32px 28px; }
-.obj-q { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; }
-.obj-a { font-size: 0.92rem; color: var(--bark); line-height: 1.72; }
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: var(--radius);
+      -webkit-tap-highlight-color: transparent;
+      flex-shrink: 0;
+    }
 
-/* FINAL CTA */
-.cta-band { background: var(--moss); color: var(--white); position: relative; overflow: hidden; }
-.cta-band::before {
-  content: ''; position: absolute; inset: 0;
-  background: repeating-linear-gradient(120deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
-}
-.cta-inner { max-width: 720px; margin: 0 auto; padding: 100px 40px; text-align: center; position: relative; z-index: 1; }
-.cta-inner .section-label { justify-content: center; color: var(--fern); }
-.cta-inner .section-label::before { background: var(--fern); }
-.cta-inner h2.display { color: var(--white); font-size: clamp(2.2rem, 4.5vw, 3.8rem); margin-bottom: 20px; }
-.cta-inner h2.display em { color: var(--fern); }
-.cta-inner p { color: rgba(255,255,255,0.58); font-size: 1rem; margin-bottom: 44px; line-height: 1.78; }
-.btn-cta-main {
-  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--fern); color: var(--white);
-  text-decoration: none; font-weight: 600; font-size: 1rem;
-  padding: 20px 44px; border-radius: var(--radius);
-  transition: background 0.2s, transform 0.15s;
-  margin-bottom: 16px;
-  -webkit-tap-highlight-color: transparent;
-  min-width: 280px;
-}
-.btn-cta-main:hover { background: #7abe8a; transform: translateY(-2px); }
-.cta-sub-note { font-size: 0.78rem; color: rgba(255,255,255,0.33); }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--forest);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
 
-/* FOOTER */
-footer {
-  background: var(--forest);
-  padding: 32px 40px;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 12px;
-}
-.footer-logo { font-family: var(--font-display); font-weight: 700; color: var(--white); font-size: 1rem; text-decoration: none; }
-.footer-logo span { color: var(--fern); }
-footer p { font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
 
-/* SCROLL REVEAL */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 56px 32px 64px; }
-  .hero-stats { flex-direction: row; gap: 3px; }
-  .stat-card { flex: 1; padding: 24px 20px; }
-  .stat-num { font-size: 1.9rem; }
-  .steps-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .objection-inner { grid-template-columns: 1fr; }
-  .offer-inner { grid-template-columns: 1fr; gap: 48px; }
-}
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
-@media (max-width: 768px) {
-  nav { padding: 0 20px; height: 60px; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .nav-drawer { display: flex; top: 60px; }
-  .mobile-cta-bar { display: block; }
-  body { padding-bottom: 88px; }
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: rgba(250, 248, 244, 0.98);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--rule);
+      z-index: 199;
+      padding: 16px 20px 24px;
+      flex-direction: column;
+      gap: 4px;
+      transform: translateY(-8px);
+      opacity: 0;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      pointer-events: none;
+    }
 
-  .hero-inner { padding: 40px 20px 56px; }
-  .hero h1 { font-size: 2.3rem; }
-  .hero-sub { font-size: 0.97rem; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .btn-hero { justify-content: center; padding: 18px; font-size: 1rem; }
-  .trust-row { gap: 12px; }
+    .nav-drawer.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
 
-  .hero-stats { flex-direction: column; gap: 3px; }
-  .stat-card { padding: 20px 22px; }
-  .stat-num { font-size: 2rem; }
+    .nav-drawer a {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--forest);
+      text-decoration: none;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      transition: background 0.18s;
+      letter-spacing: 0.01em;
+    }
 
-  .section { padding: 60px 20px; }
-  .offer-inner { padding: 60px 20px; }
-  .objection-inner { padding: 48px 20px; }
-  .cta-inner { padding: 68px 20px; }
-  footer { padding: 28px 20px; }
+    .nav-drawer a:hover,
+    .nav-drawer a:active {
+      background: var(--mist);
+    }
 
-  .step { padding: 28px 22px; }
-  .t-card { padding: 26px 22px; }
-  .obj-item { padding: 22px 18px; }
-  .pricing-header, .pricing-body { padding: 22px 22px; }
+    .nav-drawer a.drawer-cta {
+      margin-top: 8px;
+      background: var(--forest);
+      color: var(--white);
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 15px 16px;
+    }
 
-  h2.display { font-size: 1.85rem; }
-  .section-intro { font-size: 0.95rem; margin-bottom: 36px; }
+    .nav-drawer a.drawer-cta:hover {
+      background: var(--moss);
+    }
 
-  .btn-cta-main { width: 100%; max-width: 400px; padding: 18px 24px; }
-  .btn-primary { width: 100%; justify-content: center; padding: 17px 24px; }
-}
+    /* HERO */
+    .hero {
+      padding-top: 68px;
+      background: var(--forest);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
 
-@media (max-width: 420px) {
-  .hero h1 { font-size: 2rem; }
-  h2.display { font-size: 1.7rem; }
-}
-</style>
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(106, 170, 122, 0.12) 0%, transparent 70%),
+        repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255, 255, 255, 0.018) 40px, rgba(255, 255, 255, 0.018) 41px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 72px 40px 80px;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(106, 170, 122, 0.18);
+      border: 1px solid rgba(106, 170, 122, 0.35);
+      color: var(--fern);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '●';
+      font-size: 0.5rem;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--fern);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.78;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--fern);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-hero:hover {
+      background: #7abe8a;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.42);
+      letter-spacing: 0.03em;
+    }
+
+    .trust-item .chk {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(106, 170, 122, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: var(--fern);
+      flex-shrink: 0;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px 32px;
+      border-radius: var(--radius);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .stat-card:nth-child(1) {
+      animation-delay: 0.1s
+    }
+
+    .stat-card:nth-child(2) {
+      animation-delay: 0.2s;
+      background: rgba(106, 170, 122, 0.14);
+      border-color: rgba(106, 170, 122, 0.28)
+    }
+
+    .stat-card:nth-child(3) {
+      animation-delay: 0.3s
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--fern);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-card:nth-child(2) .stat-num {
+      color: #9ddba8;
+    }
+
+    .stat-desc {
+      font-size: 0.79rem;
+      color: rgba(255, 255, 255, 0.48);
+      letter-spacing: 0.03em;
+    }
+
+    /* TICKER */
+    .ticker-wrap {
+      background: var(--moss);
+      padding: 12px 0;
+      overflow: hidden;
+    }
+
+    .ticker-track {
+      display: flex;
+      animation: ticker 24s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-track span {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(212, 230, 208, 0.45);
+      padding: 0 36px;
+      flex-shrink: 0;
+    }
+
+    .ticker-track span.dot {
+      color: var(--fern);
+      padding: 0 12px;
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 96px 40px;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1.5px;
+      background: var(--sage);
+    }
+
+    h2.display {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.8vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--forest);
+      margin-bottom: 16px;
+    }
+
+    h2.display em {
+      font-style: italic;
+      color: var(--sage);
+    }
+
+    .section-intro {
+      color: var(--stone);
+      font-size: 1rem;
+      max-width: 560px;
+      line-height: 1.78;
+      margin-bottom: 56px;
+    }
+
+    /* STEPS */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .step {
+      background: var(--linen);
+      padding: 44px 36px;
+      position: relative;
+    }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--mist);
+    }
+
+    .step:first-child::before {
+      background: var(--fern);
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--mist);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--forest);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .step p {
+      font-size: 0.92rem;
+      color: var(--stone);
+      line-height: 1.72;
+    }
+
+    /* OFFER */
+    .offer-band {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .offer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 96px 40px;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .offer-inner .section-label {
+      color: var(--fern);
+    }
+
+    .offer-inner .section-label::before {
+      background: var(--fern);
+    }
+
+    .offer-inner h2.display {
+      color: var(--white);
+    }
+
+    .offer-inner .section-intro {
+      color: rgba(255, 255, 255, 0.56);
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--fern);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 16px 30px;
+      border-radius: var(--radius);
+      transition: background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-primary:hover {
+      background: #7abe8a;
+    }
+
+    .qualifier-note {
+      margin-top: 14px;
+      font-size: 0.77rem;
+      color: rgba(255, 255, 255, 0.33);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .qualifier-note::before {
+      content: '🔒';
+      font-size: 0.7rem;
+    }
+
+    .pricing-card {
+      background: var(--paper);
+      border-radius: var(--radius);
+      overflow: hidden;
+      color: var(--forest);
+    }
+
+    .pricing-header {
+      background: var(--moss);
+      padding: 28px 32px;
+    }
+
+    .pricing-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fern);
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .pricing-amount small {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.52);
+      display: block;
+      margin-top: 6px;
+    }
+
+    .pricing-body {
+      padding: 28px 32px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 28px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--bark);
+      line-height: 1.5;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      color: var(--sage);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 20px 0;
+    }
+
+    .no-contract {
+      font-size: 0.78rem;
+      color: var(--stone);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .t-card {
+      background: var(--linen);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .t-stars {
+      color: var(--sage);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .t-quote {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--forest);
+      line-height: 1.4;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .t-body {
+      font-size: 0.88rem;
+      color: var(--stone);
+      line-height: 1.72;
+      margin-bottom: 24px;
+    }
+
+    .t-author {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--forest);
+      letter-spacing: 0.04em;
+    }
+
+    .t-role {
+      font-size: 0.75rem;
+      color: var(--stone);
+    }
+
+    /* OBJECTION STRIP */
+    .objection-band {
+      background: var(--mist);
+    }
+
+    .objection-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 72px 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .obj-item {
+      background: var(--white);
+      padding: 32px 28px;
+    }
+
+    .obj-q {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 10px;
+    }
+
+    .obj-a {
+      font-size: 0.92rem;
+      color: var(--bark);
+      line-height: 1.72;
+    }
+
+    /* FINAL CTA */
+    .cta-band {
+      background: var(--moss);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(120deg, transparent, transparent 60px, rgba(255, 255, 255, 0.02) 60px, rgba(255, 255, 255, 0.02) 61px);
+    }
+
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-inner .section-label {
+      justify-content: center;
+      color: var(--fern);
+    }
+
+    .cta-inner .section-label::before {
+      background: var(--fern);
+    }
+
+    .cta-inner h2.display {
+      color: var(--white);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      margin-bottom: 20px;
+    }
+
+    .cta-inner h2.display em {
+      color: var(--fern);
+    }
+
+    .cta-inner p {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 1rem;
+      margin-bottom: 44px;
+      line-height: 1.78;
+    }
+
+    .btn-cta-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--fern);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 20px 44px;
+      border-radius: var(--radius);
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 16px;
+      -webkit-tap-highlight-color: transparent;
+      min-width: 280px;
+    }
+
+    .btn-cta-main:hover {
+      background: #7abe8a;
+      transform: translateY(-2px);
+    }
+
+    .cta-sub-note {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.33);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--forest);
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--fern);
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.28);
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 56px 32px 64px;
+      }
+
+      .hero-stats {
+        flex-direction: row;
+        gap: 3px;
+      }
+
+      .stat-card {
+        flex: 1;
+        padding: 24px 20px;
+      }
+
+      .stat-num {
+        font-size: 1.9rem;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .objection-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .offer-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 20px;
+        height: 60px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .nav-drawer {
+        display: flex;
+        top: 60px;
+      }
+
+      .mobile-cta-bar {
+        display: block;
+      }
+
+      body {
+        padding-bottom: 88px;
+      }
+
+      .hero-inner {
+        padding: 40px 20px 56px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero-sub {
+        font-size: 0.97rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-hero {
+        justify-content: center;
+        padding: 18px;
+        font-size: 1rem;
+      }
+
+      .trust-row {
+        gap: 12px;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .stat-card {
+        padding: 20px 22px;
+      }
+
+      .stat-num {
+        font-size: 2rem;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+
+      .offer-inner {
+        padding: 60px 20px;
+      }
+
+      .objection-inner {
+        padding: 48px 20px;
+      }
+
+      .cta-inner {
+        padding: 68px 20px;
+      }
+
+      footer {
+        padding: 28px 20px;
+      }
+
+      .step {
+        padding: 28px 22px;
+      }
+
+      .t-card {
+        padding: 26px 22px;
+      }
+
+      .obj-item {
+        padding: 22px 18px;
+      }
+
+      .pricing-header,
+      .pricing-body {
+        padding: 22px 22px;
+      }
+
+      h2.display {
+        font-size: 1.85rem;
+      }
+
+      .section-intro {
+        font-size: 0.95rem;
+        margin-bottom: 36px;
+      }
+
+      .btn-cta-main {
+        width: 100%;
+        max-width: 400px;
+        padding: 18px 24px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        justify-content: center;
+        padding: 17px 24px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      h2.display {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- MOBILE STICKY CTA -->
-<div class="mobile-cta-bar">
-  <a href="https://book.romero.nyc/20-minute-strategy-call">Book Your Free Strategy Call →</a>
-</div>
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta-bar">
+    <a href="https://book.romero.nyc/20-minute-strategy-call">Book Your Free Strategy Call →</a>
+  </div>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo-wrap" href="https://romero.nyc">
-    <img href="Romero Marketing Logo small.png"></img><!--<div class="nav-logo-img">Logo</div>--/>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo-wrap" href="https://romero.nyc">
+      <img href="/workspaces/romero.nyc/images/Romero Marketing Logo Horizontal small.png"></img><!--<div class="nav-logo-img">Logo</div>--/>
   </a>
   <ul class="nav-links">
-    <li><a href="https://substack.com" target="_blank" rel="noopener">SubStack</a></li>
+    <li><a href="https://www.substack.com" target="_blank" rel="noopener">SubStack</a></li>
     <li><a href="https://book.romero.nyc/">About</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -579,232 +1217,259 @@ footer p { font-size: 0.75rem; color: rgba(255,255,255,0.28); }
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div class="nav-drawer" id="nav-drawer" role="navigation">
-  <a href="https://substack.com" target="_blank" rel="noopener" onclick="closeDrawer()">SubStack</a>
-  <a href="https://book.romero.nyc/" onclick="closeDrawer()">About</a>
-  <a href="https://book.romero.nyc/20-minute-strategy-call" class="drawer-cta" onclick="closeDrawer()">Book Your Free Strategy Call →</a>
-</div>
+      <div class="nav-drawer" id="nav-drawer" role="navigation">
+        <a href="https://substack.com" target="_blank" rel="noopener" onclick="closeDrawer()">SubStack</a>
+        <a href="https://book.romero.nyc/" onclick="closeDrawer()">About</a>
+        <a href="https://book.romero.nyc/20-minute-strategy-call" class="drawer-cta" onclick="closeDrawer()">Book Your
+          Free Strategy Call →</a>
+      </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-pattern"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge">Now Accepting New Clients</div>
-      <h1>We book the meetings.<br><em>You close the deals.</em></h1>
-      <p class="hero-sub">Romero NYC runs AI-powered outbound email campaigns for B2B companies ready to scale. No retainers. No impressions. No vague metrics. You pay only when a qualified prospect is on your calendar.</p>
-      <div class="hero-actions">
-        <a href="https://book.romero.nyc/20-minute-strategy-call" class="btn-hero">Get Your Free Strategy Call →</a>
-        <a href="#how" class="btn-ghost">See how it works ↓</a>
-      </div>
-      <div class="trust-row">
-        <div class="trust-item"><div class="chk">✓</div> No retainers</div>
-        <div class="trust-item"><div class="chk">✓</div> No contracts</div>
-        <div class="trust-item"><div class="chk">✓</div> Pay per meeting only</div>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-num">$0</div>
-        <div class="stat-desc">Upfront cost to get started</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">~14 Days</div>
-        <div class="stat-desc">Average time to your first meeting booked</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">Pay-Per-Meeting</div>
-        <div class="stat-desc">Charged only when results appear on your calendar</div>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-inner">
+          <div>
+            <div class="hero-badge">Now Accepting New Clients</div>
+            <h1>We book the meetings.<br><em>You close the deals.</em></h1>
+            <p class="hero-sub">Romero NYC runs AI-powered outbound email campaigns for B2B companies ready to scale. No
+              retainers. No impressions. No vague metrics. You pay only when a qualified prospect is on your calendar.
+            </p>
+            <div class="hero-actions">
+              <a href="https://book.romero.nyc/20-minute-strategy-call" class="btn-hero">Get Your Free Strategy Call
+                →</a>
+              <a href="#how" class="btn-ghost">See how it works ↓</a>
+            </div>
+            <div class="trust-row">
+              <div class="trust-item">
+                <div class="chk">✓</div> No retainers
+              </div>
+              <div class="trust-item">
+                <div class="chk">✓</div> No contracts
+              </div>
+              <div class="trust-item">
+                <div class="chk">✓</div> Pay per meeting only
+              </div>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-num">$0</div>
+              <div class="stat-desc">Upfront cost to get started</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">~14 Days</div>
+              <div class="stat-desc">Average time to your first meeting booked</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">Pay-Per-Meeting</div>
+              <div class="stat-desc">Charged only when results appear on your calendar</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span>AI-Powered Outbound</span><span class="dot">✦</span>
-    <span>Zero Retainers</span><span class="dot">✦</span>
-    <span>Pay Per Meeting Booked</span><span class="dot">✦</span>
-    <span>B2B Lead Generation</span><span class="dot">✦</span>
-    <span>Built to Scale</span><span class="dot">✦</span>
-    <span>New York City</span><span class="dot">✦</span>
-    <span>AI-Powered Outbound</span><span class="dot">✦</span>
-    <span>Zero Retainers</span><span class="dot">✦</span>
-    <span>Pay Per Meeting Booked</span><span class="dot">✦</span>
-    <span>B2B Lead Generation</span><span class="dot">✦</span>
-    <span>Built to Scale</span><span class="dot">✦</span>
-    <span>New York City</span><span class="dot">✦</span>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="how">
-  <div class="reveal">
-    <div class="section-label">The Process</div>
-    <h2 class="display">Simple, transparent, and <em>results-first.</em></h2>
-    <p class="section-intro">We handle every part of the outbound process — from list building to inbox delivery to follow-ups. You just show up to the meetings we book.</p>
-  </div>
-  <div class="steps-grid">
-    <div class="step reveal reveal-delay-1">
-      <div class="step-num">01</div>
-      <h3>We Build Your Campaign</h3>
-      <p>We research your ideal customer profile, build hand-verified prospect lists, and write AI-personalized email sequences tailored to your industry — fully done-for-you in the first week.</p>
-    </div>
-    <div class="step reveal reveal-delay-2">
-      <div class="step-num">02</div>
-      <h3>We Launch & Optimize</h3>
-      <p>Our systems send, track, and continuously improve your outbound. We monitor reply rates, adjust messaging, and warm up domains to protect deliverability — no involvement required from you.</p>
-    </div>
-    <div class="step reveal reveal-delay-3">
-      <div class="step-num">03</div>
-      <h3>You Pay Per Meeting</h3>
-      <p>When a qualified prospect agrees to meet with your team, the meeting appears in your tracking dashboard. That's the only moment you're charged — not a second before.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING / OFFER -->
-<section class="offer-band" id="pricing">
-  <div class="offer-inner">
-    <div class="reveal">
-      <div class="section-label">Our Model</div>
-      <h2 class="display">Built for founders done <em>gambling on marketing.</em></h2>
-      <p class="section-intro">If a single new client is worth $10K or more to your business, one meeting pays for our entire service. That's the only bet we're asking you to make.</p>
-      <a href="https://book.romero.nyc/20-minute-strategy-call" class="btn-primary">See If You Qualify →</a>
-      <p class="qualifier-note">We take on a limited number of clients per month to protect results.</p>
-    </div>
-    <div class="pricing-card reveal reveal-delay-1">
-      <div class="pricing-header">
-        <div class="pricing-tag">Performance Pricing</div>
-        <div class="pricing-amount">
-          Per Meeting
-          <small>Charged only when a meeting is booked & confirmed</small>
+      <!-- TICKER -->
+      <div class="ticker-wrap">
+        <div class="ticker-track">
+          <span>AI-Powered Outbound</span><span class="dot">✦</span>
+          <span>Zero Retainers</span><span class="dot">✦</span>
+          <span>Pay Per Meeting Booked</span><span class="dot">✦</span>
+          <span>B2B Lead Generation</span><span class="dot">✦</span>
+          <span>Built to Scale</span><span class="dot">✦</span>
+          <span>New York City</span><span class="dot">✦</span>
+          <span>AI-Powered Outbound</span><span class="dot">✦</span>
+          <span>Zero Retainers</span><span class="dot">✦</span>
+          <span>Pay Per Meeting Booked</span><span class="dot">✦</span>
+          <span>B2B Lead Generation</span><span class="dot">✦</span>
+          <span>Built to Scale</span><span class="dot">✦</span>
+          <span>New York City</span><span class="dot">✦</span>
         </div>
       </div>
-      <div class="pricing-body">
-        <ul class="feature-list">
-          <li>Full campaign buildout — no upfront fee</li>
-          <li>AI-personalized email copy & sequencing</li>
-          <li>Prospect list research & enrichment</li>
-          <li>Domain warmup & deliverability management</li>
-          <li>Real-time meeting tracking dashboard</li>
-          <li>Dedicated account strategist</li>
-          <li>Monthly strategy reviews included</li>
-        </ul>
-        <hr class="pricing-divider">
-        <p class="no-contract">No contracts &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; Zero risk</p>
+
+      <!-- HOW IT WORKS -->
+      <section class="section" id="how">
+        <div class="reveal">
+          <div class="section-label">The Process</div>
+          <h2 class="display">Simple, transparent, and <em>results-first.</em></h2>
+          <p class="section-intro">We handle every part of the outbound process — from list building to inbox delivery
+            to follow-ups. You just show up to the meetings we book.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step reveal reveal-delay-1">
+            <div class="step-num">01</div>
+            <h3>We Build Your Campaign</h3>
+            <p>We research your ideal customer profile, build hand-verified prospect lists, and write AI-personalized
+              email sequences tailored to your industry — fully done-for-you in the first week.</p>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step-num">02</div>
+            <h3>We Launch & Optimize</h3>
+            <p>Our systems send, track, and continuously improve your outbound. We monitor reply rates, adjust
+              messaging, and warm up domains to protect deliverability — no involvement required from you.</p>
+          </div>
+          <div class="step reveal reveal-delay-3">
+            <div class="step-num">03</div>
+            <h3>You Pay Per Meeting</h3>
+            <p>When a qualified prospect agrees to meet with your team, the meeting appears in your tracking dashboard.
+              That's the only moment you're charged — not a second before.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING / OFFER -->
+      <section class="offer-band" id="pricing">
+        <div class="offer-inner">
+          <div class="reveal">
+            <div class="section-label">Our Model</div>
+            <h2 class="display">Built for founders done <em>gambling on marketing.</em></h2>
+            <p class="section-intro">If a single new client is worth $10K or more to your business, one meeting pays for
+              our entire service. That's the only bet we're asking you to make.</p>
+            <a href="https://book.romero.nyc/20-minute-strategy-call" class="btn-primary">See If You Qualify →</a>
+            <p class="qualifier-note">We take on a limited number of clients per month to protect results.</p>
+          </div>
+          <div class="pricing-card reveal reveal-delay-1">
+            <div class="pricing-header">
+              <div class="pricing-tag">Performance Pricing</div>
+              <div class="pricing-amount">
+                Per Meeting
+                <small>Charged only when a meeting is booked & confirmed</small>
+              </div>
+            </div>
+            <div class="pricing-body">
+              <ul class="feature-list">
+                <li>Full campaign buildout — no upfront fee</li>
+                <li>AI-personalized email copy & sequencing</li>
+                <li>Prospect list research & enrichment</li>
+                <li>Domain warmup & deliverability management</li>
+                <li>Real-time meeting tracking dashboard</li>
+                <li>Dedicated account strategist</li>
+                <li>Monthly strategy reviews included</li>
+              </ul>
+              <hr class="pricing-divider">
+              <p class="no-contract">No contracts &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; Zero risk</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section" id="results">
+        <div class="reveal">
+          <div class="section-label">Client Results</div>
+          <h2 class="display">Don't take our word for it.</h2>
+          <p class="section-intro">We work with founders and sales leaders in high-ticket industries who needed a real
+            pipeline — and needed it fast.</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="t-card reveal reveal-delay-1">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-quote">"8 qualified meetings in our first 3 weeks."</div>
+            <p class="t-body">We'd tried cold email before with mediocre results. The personalization here was on
+              another level. Three of those meetings became closed contracts worth over $200K combined.</p>
+            <div class="t-author">Marcus T.</div>
+            <div class="t-role">Founder, Commercial HVAC Services</div>
+          </div>
+          <div class="t-card reveal reveal-delay-2">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-quote">"The only model that made sense for a bootstrapped company."</div>
+            <p class="t-body">I'd been burned by agencies charging $4K/month with nothing to show for it. The
+              pay-per-meeting model was the only reason I tried — and they delivered 12 meetings in month one.</p>
+            <div class="t-author">Priya N.</div>
+            <div class="t-role">CEO, B2B SaaS Startup</div>
+          </div>
+          <div class="t-card reveal reveal-delay-3">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-quote">"Our pipeline went from empty to overflowing."</div>
+            <p class="t-body">As a bootstrapped staffing firm we couldn't afford to gamble. This was the only risk-free
+              model that made sense. We now book 6–8 meetings a month consistently and keep growing.</p>
+            <div class="t-author">James R.</div>
+            <div class="t-role">Co-Founder, B2B Staffing Agency</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OBJECTION HANDLING -->
+      <div class="objection-band">
+        <div class="objection-inner">
+          <div class="obj-item reveal">
+            <div class="obj-q">What counts as a meeting?</div>
+            <p class="obj-a">A confirmed calendar booking with a qualified prospect who meets your ICP — company size,
+              industry, and seniority level. We define this together before we launch so there are no surprises.</p>
+          </div>
+          <div class="obj-item reveal reveal-delay-1">
+            <div class="obj-q">Who is this NOT for?</div>
+            <p class="obj-a">We work best with B2B companies where a single client is worth $10K or more. If your
+              average contract value is below that, the math won't favor either of us — and we'll tell you that on the
+              call.</p>
+          </div>
+          <div class="obj-item reveal reveal-delay-2">
+            <div class="obj-q">How fast will I see results?</div>
+            <p class="obj-a">Most clients see their first meeting within 10–14 days of launch. We'll give you a
+              realistic, honest timeline on your strategy call based on your specific industry and target market.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- TESTIMONIALS -->
-<section class="section" id="results">
-  <div class="reveal">
-    <div class="section-label">Client Results</div>
-    <h2 class="display">Don't take our word for it.</h2>
-    <p class="section-intro">We work with founders and sales leaders in high-ticket industries who needed a real pipeline — and needed it fast.</p>
-  </div>
-  <div class="testimonials-grid">
-    <div class="t-card reveal reveal-delay-1">
-      <div class="t-stars">★★★★★</div>
-      <div class="t-quote">"8 qualified meetings in our first 3 weeks."</div>
-      <p class="t-body">We'd tried cold email before with mediocre results. The personalization here was on another level. Three of those meetings became closed contracts worth over $200K combined.</p>
-      <div class="t-author">Marcus T.</div>
-      <div class="t-role">Founder, Commercial HVAC Services</div>
-    </div>
-    <div class="t-card reveal reveal-delay-2">
-      <div class="t-stars">★★★★★</div>
-      <div class="t-quote">"The only model that made sense for a bootstrapped company."</div>
-      <p class="t-body">I'd been burned by agencies charging $4K/month with nothing to show for it. The pay-per-meeting model was the only reason I tried — and they delivered 12 meetings in month one.</p>
-      <div class="t-author">Priya N.</div>
-      <div class="t-role">CEO, B2B SaaS Startup</div>
-    </div>
-    <div class="t-card reveal reveal-delay-3">
-      <div class="t-stars">★★★★★</div>
-      <div class="t-quote">"Our pipeline went from empty to overflowing."</div>
-      <p class="t-body">As a bootstrapped staffing firm we couldn't afford to gamble. This was the only risk-free model that made sense. We now book 6–8 meetings a month consistently and keep growing.</p>
-      <div class="t-author">James R.</div>
-      <div class="t-role">Co-Founder, B2B Staffing Agency</div>
-    </div>
-  </div>
-</section>
+      <!-- FINAL CTA -->
+      <section class="cta-band" id="book">
+        <div class="cta-inner reveal">
+          <div class="section-label">Get Started</div>
+          <h2 class="display">Your next client is one <em>email away.</em></h2>
+          <p>Book a free 20-minute strategy call. We'll audit your current outreach, identify your highest-value
+            prospects, and tell you honestly whether we're the right fit for your business.</p>
+          <a href="https://book.romero.nyc/20-minute-strategy-call" class="btn-cta-main">Book Your Free Strategy Call
+            →</a>
+          <p class="cta-sub-note">No pressure. No pitch deck. Just a real conversation.</p>
+        </div>
+      </section>
 
-<!-- OBJECTION HANDLING -->
-<div class="objection-band">
-  <div class="objection-inner">
-    <div class="obj-item reveal">
-      <div class="obj-q">What counts as a meeting?</div>
-      <p class="obj-a">A confirmed calendar booking with a qualified prospect who meets your ICP — company size, industry, and seniority level. We define this together before we launch so there are no surprises.</p>
-    </div>
-    <div class="obj-item reveal reveal-delay-1">
-      <div class="obj-q">Who is this NOT for?</div>
-      <p class="obj-a">We work best with B2B companies where a single client is worth $10K or more. If your average contract value is below that, the math won't favor either of us — and we'll tell you that on the call.</p>
-    </div>
-    <div class="obj-item reveal reveal-delay-2">
-      <div class="obj-q">How fast will I see results?</div>
-      <p class="obj-a">Most clients see their first meeting within 10–14 days of launch. We'll give you a realistic, honest timeline on your strategy call based on your specific industry and target market.</p>
-    </div>
-  </div>
-</div>
+      <!-- FOOTER -->
+      <footer>
+        <a class="footer-logo" href="https://romero.nyc"><img
+            href="/workspaces/romero.nyc/images/Romero Marketing Logo Horizontal small.png"></img></a>
+        <p>All Rights Reserved © 2026 Romero NYC Marketing Agency LLC.</p>
+      </footer>
 
-<!-- FINAL CTA -->
-<section class="cta-band" id="book">
-  <div class="cta-inner reveal">
-    <div class="section-label">Get Started</div>
-    <h2 class="display">Your next client is one <em>email away.</em></h2>
-    <p>Book a free 20-minute strategy call. We'll audit your current outreach, identify your highest-value prospects, and tell you honestly whether we're the right fit for your business.</p>
-    <a href="https://book.romero.nyc/20-minute-strategy-call" class="btn-cta-main">Book Your Free Strategy Call →</a>
-    <p class="cta-sub-note">No pressure. No pitch deck. Just a real conversation.</p>
-  </div>
-</section>
+      <script>
+        // Scroll reveal
+        (function () {
+          var els = document.querySelectorAll('.reveal');
+          if (!els.length) return;
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+            });
+          }, { threshold: 0.12 });
+          els.forEach(function (el) { io.observe(el); });
+        })();
 
-<!-- FOOTER -->
-<footer>
-  <a class="footer-logo" href="https://romero.nyc"><img href="Romero Marketing Logo small.png"></img></a>
-  <p>© 2026 Romero NYC Marketing Agency LLC</p>
-</footer>
+        // Hamburger menu
+        var btn = document.getElementById('hamburger');
+        var drawer = document.getElementById('nav-drawer');
 
-<script>
-// Scroll reveal
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if(!els.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  },{threshold:0.12});
-  els.forEach(function(el){ io.observe(el); });
-})();
+        function closeDrawer() {
+          btn.classList.remove('open');
+          drawer.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
 
-// Hamburger menu
-var btn = document.getElementById('hamburger');
-var drawer = document.getElementById('nav-drawer');
+        btn.addEventListener('click', function () {
+          var isOpen = drawer.classList.contains('open');
+          if (isOpen) { closeDrawer(); }
+          else {
+            btn.classList.add('open');
+            drawer.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
 
-function closeDrawer() {
-  btn.classList.remove('open');
-  drawer.classList.remove('open');
-  btn.setAttribute('aria-expanded','false');
-}
-
-btn.addEventListener('click', function(){
-  var isOpen = drawer.classList.contains('open');
-  if(isOpen){ closeDrawer(); }
-  else {
-    btn.classList.add('open');
-    drawer.classList.add('open');
-    btn.setAttribute('aria-expanded','true');
-  }
-});
-
-// Close drawer on outside click
-document.addEventListener('click', function(e){
-  if(!btn.contains(e.target) && !drawer.contains(e.target)){
-    closeDrawer();
-  }
-});
-</script>-e 
+        // Close drawer on outside click
+        document.addEventListener('click', function (e) {
+          if (!btn.contains(e.target) && !drawer.contains(e.target)) {
+            closeDrawer();
+          }
+        });
+      </script>-e
 </body>
+
 </html>
