@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Privacy Policy — Romero NYC Marketing Agency LLC">
+<title>Privacy Policy — Romero NYC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+:root {
+  --forest:   #1f3329;
+  --moss:     #2e5039;
+  --sage:     #4a7c59;
+  --fern:     #6aaa7a;
+  --mist:     #d4e6d0;
+  --linen:    #f0ede6;
+  --paper:    #faf8f4;
+  --bark:     #3d2e1e;
+  --stone:    #7a7468;
+  --rule:     #ddd8cc;
+  --white:    #ffffff;
+  --text:     #1c1c1c;
+  --text-muted: #5a5a5a;
+  --text-light: #8a8a8a;
+  --border:   #ddd8cc;
+  --border-light: #edeae3;
+  --font-display: 'Lora', Georgia, serif;
+  --font-body:    'Instrument Sans', sans-serif;
+  --radius: 4px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── NAV (matches romero.nyc) ── */
+nav {
+  position: sticky; top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(250,248,244,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 40px;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.nav-logo-wrap {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; flex-shrink: 0;
+}
+.nav-logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--forest);
+  line-height: 1;
+}
+.nav-logo-text span { color: var(--fern); }
+.nav-doc-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.nav-back {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--forest);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  transition: background 0.18s, color 0.18s;
+  white-space: nowrap;
+}
+.nav-back:hover { background: var(--mist); color: var(--moss); }
+
+/* ── DOC HERO ── */
+.doc-hero {
+  background: var(--forest);
+  color: var(--white);
+  padding: 72px 40px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.doc-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 90% 50%, rgba(106,170,122,0.12) 0%, transparent 65%),
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.018) 40px, rgba(255,255,255,0.018) 41px);
+  pointer-events: none;
+}
+.doc-hero-inner { max-width: 860px; position: relative; z-index: 1; }
+.doc-hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fern);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.doc-hero-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--fern); }
+.doc-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+.doc-hero h1 em { font-style: italic; color: var(--fern); }
+.doc-hero-meta {
+  display: flex; gap: 40px; flex-wrap: wrap;
+}
+.doc-hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.doc-hero-meta-item .label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+.doc-hero-meta-item .value {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.78);
+  font-weight: 500;
+}
+.doc-hero-meta-item .value a { color: var(--fern); text-decoration: none; }
+.doc-hero-meta-item .value a:hover { text-decoration: underline; }
+
+/* ── COMPLIANCE BAR ── */
+.compliance-bar {
+  background: var(--linen);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 40px;
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+}
+.compliance-bar .bar-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-right: 4px;
+}
+.badge {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.badge-gdpr  { background: rgba(74,124,89,0.12); color: var(--moss); border: 1px solid rgba(74,124,89,0.25); }
+.badge-ccpa  { background: rgba(74,124,89,0.12); color: var(--moss); border: 1px solid rgba(74,124,89,0.25); }
+.badge-coppa { background: rgba(61,46,30,0.08); color: var(--bark); border: 1px solid rgba(61,46,30,0.2); }
+.badge-canspam { background: rgba(122,116,104,0.1); color: var(--stone); border: 1px solid rgba(122,116,104,0.25); }
+
+/* ── LAYOUT ── */
+.layout {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  align-items: start;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky;
+  top: 84px;
+  padding: 48px 24px 48px 0;
+  border-right: 1px solid var(--border-light);
+}
+.sidebar-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.toc-list { list-style: none; }
+.toc-list li { margin-bottom: 2px; }
+.toc-list a {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+  border-left: 2px solid transparent;
+  transition: all 0.15s ease;
+  line-height: 1.3;
+}
+.toc-list a:hover, .toc-list a.active {
+  color: var(--moss);
+  background: var(--mist);
+  border-left-color: var(--fern);
+}
+.toc-num {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--sage);
+  margin-right: 6px;
+  letter-spacing: 0.05em;
+}
+
+/* ── CONTENT ── */
+.content {
+  padding: 60px 0 60px 56px;
+  min-width: 0;
+}
+
+/* ── SUMMARY BOX ── */
+.summary-box {
+  background: var(--linen);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--fern);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 36px 40px;
+  margin-bottom: 60px;
+}
+.summary-box .summary-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 4px;
+}
+.summary-box .summary-sub {
+  font-size: 0.82rem;
+  color: var(--stone);
+  margin-bottom: 28px;
+  font-style: italic;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.faq-q {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.faq-q::before {
+  content: 'Q';
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: var(--forest);
+  color: var(--fern);
+  padding: 1px 5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+}
+.faq-a {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 22px;
+}
+
+/* ── SECTIONS ── */
+.section { margin-bottom: 64px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--forest);
+}
+.section-num {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sage);
+  flex-shrink: 0;
+  letter-spacing: 0.06em;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--moss);
+  margin: 28px 0 10px;
+  letter-spacing: 0.01em;
+}
+
+p {
+  font-size: 0.94rem;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+
+a { color: var(--moss); }
+a:hover { color: var(--fern); }
+
+strong { color: var(--bark); }
+
+.caps-warning {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #7a2a2a;
+  background: #fdf2f2;
+  border: 1px solid #f0cccc;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.notice {
+  font-size: 0.88rem;
+  background: rgba(106,170,122,0.1);
+  border: 1px solid rgba(106,170,122,0.3);
+  border-left: 4px solid var(--fern);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  color: var(--moss);
+  line-height: 1.6;
+}
+
+ul { list-style: none; margin: 10px 0 16px; }
+ul li {
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 6px 0 6px 24px;
+  position: relative;
+  line-height: 1.7;
+  border-bottom: 1px solid var(--border-light);
+}
+ul li:last-child { border-bottom: none; }
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 15px;
+  width: 8px; height: 2px;
+  background: var(--fern);
+}
+
+/* ── DATA TABLE ── */
+.data-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+thead tr { background: var(--forest); }
+thead th {
+  color: var(--white);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  text-align: left;
+}
+tbody tr:nth-child(even) { background: var(--linen); }
+tbody tr:nth-child(odd) { background: var(--paper); }
+tbody tr:hover { background: var(--mist); }
+tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text);
+  vertical-align: top;
+  line-height: 1.5;
+}
+tbody tr:last-child td { border-bottom: none; }
+
+/* ── RIGHTS GRID ── */
+.rights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.right-card {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 20px;
+  background: var(--paper);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.right-card:hover {
+  border-color: var(--sage);
+  box-shadow: 0 4px 12px rgba(31,51,41,0.08);
+}
+.right-card .right-tag {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+.right-card .right-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+.right-card .right-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ── CONTACT BOX ── */
+.contact-box {
+  background: var(--forest);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  display: flex; gap: 40px; flex-wrap: wrap; align-items: center;
+  margin-top: 20px;
+}
+.contact-box .contact-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.contact-box .contact-value {
+  font-size: 0.94rem;
+  color: var(--white);
+  font-weight: 500;
+}
+.contact-box .contact-value a { color: var(--fern); text-decoration: none; }
+.contact-box .contact-value a:hover { text-decoration: underline; }
+
+/* ── FOOTER (matches romero.nyc) ── */
+footer {
+  background: var(--forest);
+  padding: 32px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+  margin-top: 80px;
+}
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--white);
+  font-size: 1rem;
+  text-decoration: none;
+}
+.footer-logo span { color: var(--fern); }
+footer p { font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+.footer-links { display: flex; gap: 20px; align-items: center; }
+.footer-links a {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--fern); }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; height: 60px; }
+  .doc-hero { padding: 48px 20px 40px; }
+  .compliance-bar { padding: 14px 20px; }
+  .layout { grid-template-columns: 1fr; padding: 0 20px; }
+  .sidebar { display: none; }
+  .content { padding: 40px 0; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .rights-grid { grid-template-columns: 1fr; }
+  .contact-box { gap: 20px; padding: 24px; }
+  footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo-wrap" href="https://romero.nyc">
+    <span class="nav-logo-text"><span>Romero</span> NYC</span>
+  </a>
+  <span class="nav-doc-label">Privacy Policy</span>
+  <a href="https://romero.nyc" class="nav-back">← Back to site</a>
+</nav>
+
+<!-- DOC HERO -->
+<section class="doc-hero">
+  <div class="doc-hero-inner">
+    <div class="doc-hero-eyebrow">Legal Document</div>
+    <h1><em>Privacy</em> Policy</h1>
+    <div class="doc-hero-meta">
+      <div class="doc-hero-meta-item">
+        <span class="label">Effective Date</span>
+        <span class="value">March 10, 2026</span>
+      </div>
+      <div class="doc-hero-meta-item">
+        <span class="label">Last Updated</span>
+        <span class="value">March 10, 2026</span>
+      </div>
+      <div class="doc-hero-meta-item">
+        <span class="label">Jurisdiction</span>
+        <span class="value">New York, United States</span>
+      </div>
+      <div class="doc-hero-meta-item">
+        <span class="label">Privacy Contact</span>
+        <span class="value"><a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE BAR -->
+<div class="compliance-bar">
+  <span class="bar-label">Compliant with</span>
+  <span class="badge badge-gdpr">GDPR / UK GDPR</span>
+  <span class="badge badge-ccpa">CCPA / CPRA</span>
+  <span class="badge badge-coppa">COPPA</span>
+  <span class="badge badge-canspam">CAN-SPAM</span>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+  <nav class="sidebar">
+    <div class="sidebar-label">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#summary"><span class="toc-num">—</span>Plain-English Summary</a></li>
+      <li><a href="#s1"><span class="toc-num">01</span>Information We Collect</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span>How We Collect</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span>How We Use Data</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span>Data Sharing</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span>Cookie Policy</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span>Data Retention</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span>Your Rights</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span>Opt-Out Options</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span>Data Security</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span>Children's Privacy</a></li>
+      <li><a href="#s11"><span class="toc-num">11</span>Third-Party Links</a></li>
+      <li><a href="#s12"><span class="toc-num">12</span>Policy Changes</a></li>
+      <li><a href="#s13"><span class="toc-num">13</span>Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+
+    <p>This Privacy Policy ("Policy") describes how <strong>Romero NYC Marketing Agency LLC</strong> ("Romero NYC," "we," "us," or "our") collects, uses, discloses, and protects your personal information when you visit <a href="https://romero.nyc">romero.nyc</a>, use our web applications, Free Tools, or engage with any of our services. This Policy is incorporated by reference into our <a href="https://romero.nyc/terms">Terms of Service</a>.</p>
+    <div class="caps-warning">BY USING OUR SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTOOD THIS POLICY. IF YOU DO NOT AGREE, PLEASE DISCONTINUE USE OF OUR SERVICES IMMEDIATELY.</div>
+
+    <!-- SUMMARY -->
+    <div id="summary" class="summary-box reveal">
+      <div class="summary-title">Plain-English Summary</div>
+      <div class="summary-sub">The full legal sections below are binding — this is for your convenience.</div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-q">What do you collect?</div>
+          <div class="faq-a">Name, email, job title, company, IP address, browser/device info, cookies, and behavioral data like time-on-page and click rates.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Why do you collect it?</div>
+          <div class="faq-a">To run our website, deliver services, improve our tools, send marketing emails, serve ads, and reach out about our services and products.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you sell my data?</div>
+          <div class="faq-a">Not for money. We share data with service providers (HubSpot, Google, LinkedIn). This may qualify as "sharing" under CCPA — you can opt out.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What third parties get my data?</div>
+          <div class="faq-a">HubSpot (CRM), Google Analytics/Ads, LinkedIn Insight Tag, email delivery platforms, and our hosting provider.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What are my rights?</div>
+          <div class="faq-a">Access, correct, delete, or export your data. California residents have additional CCPA rights. EU/UK residents have GDPR rights. We respond within 45 days.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you track me with cookies?</div>
+          <div class="faq-a">Yes — for analytics and advertising (Google and LinkedIn pixels). You can opt out via our cookie banner or browser settings.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What about the free tools?</div>
+          <div class="faq-a">Free to use. By using them, you consent to us potentially reaching out about our services or products. Opt out any time.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I contact you?</div>
+          <div class="faq-a">Email <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a> with any privacy questions or requests.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div id="s1" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Information We Collect</h2>
+      </div>
+      <h3>1.1 Information You Provide Directly</h3>
+      <p>We collect personal information you voluntarily provide when you complete a form, subscribe to our email list, use a Free Tool, purchase a service, or communicate with us. Categories include:</p>
+      <ul>
+        <li><strong>Identifiers:</strong> First name, last name, business email address, phone number (if provided)</li>
+        <li><strong>Professional information:</strong> Job title, company name, industry, company size</li>
+        <li><strong>Commercial information:</strong> Service inquiries, purchase history, billing information</li>
+        <li><strong>Communications:</strong> Messages, questions, and feedback you submit</li>
+      </ul>
+      <h3>1.2 Information Collected Automatically</h3>
+      <p>When you visit our website or use our tools, we and our third-party partners automatically collect:</p>
+      <ul>
+        <li><strong>Device and browser data:</strong> IP address, browser type and version, operating system, device type</li>
+        <li><strong>Usage data:</strong> Pages visited, time spent per page, scroll depth, click-through rates, session duration, content engagement metrics</li>
+        <li><strong>Referral data:</strong> The URL or platform that directed you to our website</li>
+        <li><strong>Cookie and tracking data:</strong> As described in Section 5</li>
+        <li><strong>Pixel data:</strong> Conversion events and behavioral signals captured by Google Ads and LinkedIn Insight Tag pixels</li>
+      </ul>
+      <h3>1.3 Information from Third Parties</h3>
+      <p>We may receive data from advertising platforms (Google, LinkedIn) providing audience insights, data enrichment services that supplement contact records with professional information, and analytics providers aggregating behavioral data across sessions.</p>
+      <h3>1.4 Sensitive Data</h3>
+      <p>Romero NYC does not intentionally collect sensitive personal information such as government ID numbers, health data, racial or ethnic origin, or financial account numbers. Please do not submit such information through our forms or tools.</p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div id="s2" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">How We Collect Your Information</h2>
+      </div>
+      <h3>2.1 Forms and Direct Submissions</h3>
+      <p>Collected when you actively complete and submit a form, including contact forms, newsletter sign-ups, tool interfaces, and service inquiry forms.</p>
+      <h3>2.2 Cookies and Tracking Technologies</h3>
+      <p>We use cookies, web beacons, pixel tags, and local storage. See Section 5 for full details.</p>
+      <h3>2.3 Google Analytics</h3>
+      <p>We use Google Analytics to collect behavioral data about how visitors interact with our website, including session data, page views, and engagement metrics.</p>
+      <h3>2.4 Advertising Pixels</h3>
+      <p>Our website deploys advertising pixels operated by Google and LinkedIn. These pixels collect visit data and may serve you retargeted advertisements on those platforms. Each platform's privacy policy applies in addition to ours.</p>
+      <h3>2.5 HubSpot CRM Integration</h3>
+      <p>We use HubSpot as our CRM platform. When you submit a form on our website, your information is transmitted to and stored in HubSpot. HubSpot may also track your interactions with our emails and website using its own tracking technology. See: <a href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener">HubSpot Privacy Policy</a>.</p>
+      <h3>2.6 Automatic Server Logs</h3>
+      <p>Our web hosting infrastructure automatically records IP addresses, request timestamps, requested URLs, HTTP status codes, and referrer information for security and diagnostics.</p>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div id="s3" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">How We Use Your Information</h2>
+      </div>
+      <div class="data-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Data Used</th>
+              <th>Legal Basis (GDPR)</th>
+              <th>Applies To</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Delivering contracted services</td><td>Name, email, company, billing</td><td>Performance of contract</td><td>Service clients</td></tr>
+            <tr><td>Responding to inquiries</td><td>Name, email, message content</td><td>Legitimate interests</td><td>Form submitters</td></tr>
+            <tr><td>Email marketing (our services)</td><td>Email, name, engagement data</td><td>Consent / Legitimate interests</td><td>Subscribers &amp; leads</td></tr>
+            <tr><td>Outreach for future products</td><td>Email, job title, company</td><td>Consent / Legitimate interests</td><td>Tool users, leads</td></tr>
+            <tr><td>Affiliate marketing</td><td>Email, behavioral data</td><td>Consent</td><td>Website visitors</td></tr>
+            <tr><td>Advertising &amp; retargeting</td><td>IP, cookies, pixel data</td><td>Consent</td><td>Website visitors</td></tr>
+            <tr><td>Analytics &amp; performance</td><td>Usage data, click data</td><td>Legitimate interests</td><td>All visitors</td></tr>
+            <tr><td>CRM &amp; lead management</td><td>All contact data</td><td>Legitimate interests</td><td>Leads &amp; clients</td></tr>
+            <tr><td>Legal compliance</td><td>Any relevant data</td><td>Legal obligation</td><td>As required</td></tr>
+            <tr><td>Security &amp; fraud prevention</td><td>IP, device, usage logs</td><td>Legitimate interests</td><td>All visitors</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>3.1 Marketing and Outreach — Important Disclosure</h3>
+      <p>By submitting any form, using any Free Tool, or otherwise providing your contact information, you expressly consent to Romero NYC using your information to:</p>
+      <ul>
+        <li>Send commercial email communications about our outbound marketing services</li>
+        <li>Contact you regarding consulting, advisory, or retainer services</li>
+        <li>Reach out about digital products, templates, courses, or other resources we develop</li>
+        <li>Enroll you in marketing sequences managed through HubSpot or similar platforms</li>
+      </ul>
+      <p>You may opt out of marketing communications at any time as described in Section 8.</p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div id="s4" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">How We Share Your Information</h2>
+      </div>
+      <h3>4.1 Service Providers</h3>
+      <div class="data-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Category</th>
+              <th>Data Shared</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>HubSpot</td><td>CRM / Marketing</td><td>Name, email, company, activity</td><td>Contact management &amp; email</td></tr>
+            <tr><td>Google Analytics</td><td>Analytics</td><td>IP (anonymized), behavior, device</td><td>Website performance</td></tr>
+            <tr><td>Google Ads</td><td>Advertising</td><td>Pixel/cookie data, conversions</td><td>Ad targeting &amp; measurement</td></tr>
+            <tr><td>LinkedIn Insight Tag</td><td>Advertising</td><td>Pixel/cookie data, page visits</td><td>B2B ad targeting</td></tr>
+            <tr><td>Web hosting provider</td><td>Infrastructure</td><td>Server logs, IP addresses</td><td>Hosting &amp; security</td></tr>
+            <tr><td>Email delivery (ESP)</td><td>Communications</td><td>Email address, name</td><td>Sending emails</td></tr>
+            <tr><td>Payment processor</td><td>Payments</td><td>Billing info (not stored by us)</td><td>Processing transactions</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>4.2 No Sale of Personal Data — CCPA Disclosure</h3>
+      <div class="notice">Romero NYC does not sell personal data for monetary compensation. However, sharing data with advertising platforms such as Google and LinkedIn for targeted advertising may constitute a "sale" or "sharing" under CCPA/CPRA. California residents have the right to opt out. See Section 8.</div>
+      <h3>4.3 Business Transfers</h3>
+      <p>In the event of a merger, acquisition, or sale of assets, your data may be transferred to the successor entity. You will be notified if the transfer results in a materially different privacy policy.</p>
+      <h3>4.4 Legal Requirements</h3>
+      <p>We may disclose personal data if required by law, subpoena, or court order, or if necessary to protect the rights, property, or safety of Romero NYC, our clients, or the public.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div id="s5" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Cookie Policy</h2>
+      </div>
+      <h3>5.1 What Are Cookies?</h3>
+      <p>Cookies are small text files placed on your device by a website. They allow the website to recognize your device, remember your preferences, and collect usage data across sessions. We also use web beacons, local storage, and session identifiers.</p>
+      <h3>5.2 Cookies We Use</h3>
+      <div class="data-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cookie Type</th>
+              <th>Provider</th>
+              <th>Purpose</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Strictly Necessary</td><td>Romero NYC / Hosting</td><td>Site functionality, security, load balancing</td><td>Session</td></tr>
+            <tr><td>Analytics</td><td>Google Analytics</td><td>Traffic measurement, behavior tracking</td><td>Up to 2 years</td></tr>
+            <tr><td>Performance</td><td>HubSpot</td><td>Page visit tracking, email link tracking</td><td>Up to 13 months</td></tr>
+            <tr><td>Advertising</td><td>Google Ads</td><td>Conversion tracking, retargeting</td><td>Up to 90 days</td></tr>
+            <tr><td>Advertising</td><td>LinkedIn Insight Tag</td><td>B2B audience targeting, retargeting</td><td>Up to 90 days</td></tr>
+            <tr><td>Preferences</td><td>Romero NYC</td><td>Cookie consent state, preferences</td><td>Up to 1 year</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>5.3 Your Cookie Choices</h3>
+      <ul>
+        <li><strong>Cookie consent banner:</strong> Upon first visit, you will be presented with options to accept or decline non-essential cookies</li>
+        <li><strong>Browser settings:</strong> Most browsers allow you to block or delete cookies in their settings</li>
+        <li><strong>Google Analytics opt-out:</strong> <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Install the Google Analytics Opt-Out Add-On</a></li>
+        <li><strong>LinkedIn opt-out:</strong> <a href="https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out" target="_blank" rel="noopener">Manage LinkedIn ad preferences</a></li>
+        <li><strong>Google Ads opt-out:</strong> <a href="https://adssettings.google.com" target="_blank" rel="noopener">Manage Google ad personalization</a></li>
+        <li><strong>Do Not Track:</strong> We honor browser-level DNT signals where technically feasible</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div id="s6" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Data Retention</h2>
+      </div>
+      <p>We retain personal data only for as long as necessary to fulfill the purposes described in this Policy, unless a longer retention period is required or permitted by law.</p>
+      <div class="data-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data Category</th>
+              <th>Retention Period</th>
+              <th>Deletion Trigger</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Active client records</td><td>Duration of relationship + 3 years</td><td>Contract end + 3 years</td></tr>
+            <tr><td>Lead and prospect data (CRM)</td><td>Up to 3 years from last contact</td><td>Opt-out or 3-year inactivity</td></tr>
+            <tr><td>Email marketing engagement</td><td>Duration of subscription</td><td>Unsubscribe or deletion request</td></tr>
+            <tr><td>Form submission data</td><td>Up to 3 years</td><td>Opt-out or deletion request</td></tr>
+            <tr><td>Website analytics data</td><td>26 months (Google default)</td><td>Rolling deletion per GA settings</td></tr>
+            <tr><td>Server / access logs</td><td>90 days</td><td>Automated rolling deletion</td></tr>
+            <tr><td>Cookie / pixel data</td><td>Per cookie lifespan (see §5.2)</td><td>Browser deletion or opt-out</td></tr>
+            <tr><td>Billing and payment records</td><td>7 years</td><td>Required by tax/financial law</td></tr>
+            <tr><td>Legal correspondence</td><td>7 years</td><td>Legal hold expiration</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Following the applicable retention period, we will securely delete or anonymize your personal data. Anonymized data may be retained indefinitely for analytical purposes.</p>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div id="s7" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Your Privacy Rights</h2>
+      </div>
+      <h3>7.1 Rights Available to All Users</h3>
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-tag">Universal</div>
+          <div class="right-title">Right to Know</div>
+          <div class="right-desc">Request a summary of the personal data we hold about you and how it is used.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">Universal</div>
+          <div class="right-title">Right to Correct</div>
+          <div class="right-desc">Request that we correct inaccurate or incomplete personal information.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">Universal</div>
+          <div class="right-title">Right to Delete</div>
+          <div class="right-desc">Request deletion of your personal data, subject to our legal retention obligations.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">Universal</div>
+          <div class="right-title">Right to Opt Out</div>
+          <div class="right-desc">Opt out of commercial email communications at any time via unsubscribe link or email.</div>
+        </div>
+      </div>
+      <h3>7.2 Additional Rights — California Residents (CCPA/CPRA)</h3>
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-tag">CCPA</div>
+          <div class="right-title">Right to Know (Detailed)</div>
+          <div class="right-desc">Request the specific categories of personal information collected, used, disclosed, or sold in the past 12 months.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">CCPA</div>
+          <div class="right-title">Opt Out of Sale/Sharing</div>
+          <div class="right-desc">Opt out of sharing your data with ad platforms for cross-context behavioral advertising. Email us with subject "CCPA Opt-Out."</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">CCPA</div>
+          <div class="right-title">Right to Non-Discrimination</div>
+          <div class="right-desc">We will not discriminate against you for exercising any of your CCPA rights.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">CCPA</div>
+          <div class="right-title">Authorized Agent</div>
+          <div class="right-desc">You may designate an authorized agent to submit requests on your behalf with written proof of authorization.</div>
+        </div>
+      </div>
+      <h3>7.3 Additional Rights — EEA, UK &amp; Swiss Residents (GDPR)</h3>
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-tag">GDPR Art. 15</div>
+          <div class="right-title">Right of Access</div>
+          <div class="right-desc">Obtain confirmation of whether we process your data and receive a copy of it.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">GDPR Art. 16</div>
+          <div class="right-title">Right to Rectification</div>
+          <div class="right-desc">Request correction of inaccurate or incomplete personal data.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">GDPR Art. 17</div>
+          <div class="right-title">Right to Erasure</div>
+          <div class="right-desc">Request deletion of your data where no legal basis for retention exists.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">GDPR Art. 20</div>
+          <div class="right-title">Data Portability</div>
+          <div class="right-desc">Receive your data in a structured, machine-readable format.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">GDPR Art. 21</div>
+          <div class="right-title">Right to Object</div>
+          <div class="right-desc">Object to processing based on legitimate interests, including for direct marketing.</div>
+        </div>
+        <div class="right-card">
+          <div class="right-tag">GDPR Art. 7(3)</div>
+          <div class="right-title">Withdraw Consent</div>
+          <div class="right-desc">Where processing is based on consent, withdraw it at any time without affecting prior lawful processing.</div>
+        </div>
+      </div>
+      <p style="margin-top:20px;">If you are located in the EEA or UK, you also have the right to lodge a complaint with your local data protection authority: <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank" rel="noopener">Find your EU authority</a> | <a href="https://ico.org.uk" target="_blank" rel="noopener">UK ICO</a>.</p>
+      <p><strong>International Transfers:</strong> Romero NYC is based in the United States. If you are in the EEA or UK, your data is processed in the US under Standard Contractual Clauses (SCCs) or other appropriate safeguards. Contact us to request a copy.</p>
+      <h3>7.4 How to Submit a Privacy Request</h3>
+      <p>Email <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a> with subject line <strong>"Privacy Request – [Your Name]"</strong>. We will acknowledge receipt within 10 business days and respond within 45 calendar days. We will need to verify your identity before processing your request. No fees will be charged.</p>
+    </div>
+
+    <!-- SECTION 8 -->
+    <div id="s8" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2 class="section-title">Opt-Out &amp; Communication Preferences</h2>
+      </div>
+      <h3>8.1 Email Marketing Opt-Out</h3>
+      <p>Opt out of all marketing emails at any time by: (a) clicking "Unsubscribe" in any marketing email; or (b) emailing <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a> with "Unsubscribe" in the subject line. We process opt-out requests within 10 business days. Transactional and service emails are unaffected.</p>
+      <h3>8.2 CCPA Opt-Out of Sale/Sharing</h3>
+      <p>California residents may opt out of sharing data with advertising platforms for cross-context behavioral advertising. Email <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a> with subject line "CCPA Opt-Out" or use the cookie opt-out mechanisms in Section 5.3. We will process your request within 15 business days.</p>
+      <h3>8.3 GDPR Withdrawal of Consent</h3>
+      <p>Where our processing is based on your consent, you may withdraw consent at any time by contacting <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a>. Withdrawal does not affect the lawfulness of processing that occurred prior to withdrawal.</p>
+    </div>
+
+    <!-- SECTION 9 -->
+    <div id="s9" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">09</span>
+        <h2 class="section-title">Data Security</h2>
+      </div>
+      <p>We implement commercially reasonable technical and organizational measures to protect personal information against unauthorized access, disclosure, alteration, and destruction:</p>
+      <ul>
+        <li><strong>Encryption:</strong> Data in transit is encrypted via TLS. Data stored in our systems and HubSpot is encrypted at rest.</li>
+        <li><strong>Access controls:</strong> Personal data access is restricted to personnel who require it for their role, using role-based access controls and authentication requirements.</li>
+        <li><strong>Third-party security:</strong> Key providers (HubSpot, Google Cloud infrastructure) maintain SOC 2 compliance and industry-standard security certifications.</li>
+        <li><strong>Monitoring:</strong> We monitor for unauthorized access and anomalous activity.</li>
+        <li><strong>Vendor assessment:</strong> We evaluate third-party service providers for security practices before sharing personal data.</li>
+      </ul>
+      <p>No method of electronic transmission or storage is 100% secure. In the event of a data breach affecting your rights and freedoms, we will notify affected individuals and relevant authorities as required by applicable law (within 72 hours under GDPR where applicable).</p>
+    </div>
+
+    <!-- SECTION 10 -->
+    <div id="s10" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2 class="section-title">Children's Privacy (COPPA)</h2>
+      </div>
+      <p>Our Services are intended solely for adults (18+) in a B2B context. We do not knowingly collect personal information from children under the age of 13, consistent with COPPA.</p>
+      <p>While Romero NYC does not target minors and does not create content designed to attract users under 13, we acknowledge that we cannot technically prevent minors from visiting our website and we do not have age-gating in place at this time.</p>
+      <p>If we become aware that we have inadvertently collected personal information from a child under 13 without verifiable parental consent, we will take prompt steps to delete that information. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately at <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a>.</p>
+    </div>
+
+    <!-- SECTION 11 -->
+    <div id="s11" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">11</span>
+        <h2 class="section-title">Third-Party Websites &amp; Links</h2>
+      </div>
+      <p>Our website may contain links to third-party websites not owned or controlled by Romero NYC. This Policy does not apply to those websites. We encourage you to review the privacy policies of any third-party sites you visit. Romero NYC is not responsible for the content, privacy practices, or data handling of third-party websites.</p>
+    </div>
+
+    <!-- SECTION 12 -->
+    <div id="s12" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">12</span>
+        <h2 class="section-title">Changes to This Policy</h2>
+      </div>
+      <p>We reserve the right to update this Privacy Policy at any time. When we make material changes, we will: (a) update the "Effective Date" at the top; (b) notify registered users and email subscribers; and (c) post a prominent notice on our website for at least 30 days.</p>
+      <p>Your continued use of our Services following the effective date of any updated Policy constitutes your acceptance of the changes.</p>
+    </div>
+
+    <!-- SECTION 13 -->
+    <div id="s13" class="section reveal">
+      <div class="section-header">
+        <span class="section-num">13</span>
+        <h2 class="section-title">Contact Information</h2>
+      </div>
+      <p>For any privacy-related questions, requests, or complaints, please contact:</p>
+      <div class="contact-box">
+        <div>
+          <div class="contact-label">Organization</div>
+          <div class="contact-value">Romero NYC Marketing Agency LLC</div>
+        </div>
+        <div>
+          <div class="contact-label">Privacy Contact</div>
+          <div class="contact-value">Kristian Romero</div>
+        </div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a></div>
+        </div>
+        <div>
+          <div class="contact-label">Website</div>
+          <div class="contact-value"><a href="https://romero.nyc" target="_blank">romero.nyc</a></div>
+        </div>
+        <div>
+          <div class="contact-label">Jurisdiction</div>
+          <div class="contact-value">New York, United States</div>
+        </div>
+      </div>
+      <p style="margin-top:20px;">For GDPR purposes, Romero NYC Marketing Agency LLC is the data controller for personal data collected through this website. If you have unresolved concerns, you may contact your local supervisory authority.</p>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="https://romero.nyc"><span>Romero</span> NYC</a>
+  <div class="footer-links">
+    <a href="https://romero.nyc/terms">Terms of Service</a>
+    <a href="mailto:kristian@romero.nyc">kristian@romero.nyc</a>
+  </div>
+  <p>© 2025 Romero NYC Marketing Agency LLC · New York City, NY</p>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  },{threshold:0.08});
+  els.forEach(function(el){ io.observe(el); });
+
+  var sections = document.querySelectorAll('[id]');
+  var tocLinks = document.querySelectorAll('.toc-list a');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        tocLinks.forEach(function(a){ a.classList.remove('active'); });
+        var active = document.querySelector('.toc-list a[href="#'+e.target.id+'"]');
+        if(active) active.classList.add('active');
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(function(s){ observer.observe(s); });
+})();
+</script>
+
+</body>
+</html>
